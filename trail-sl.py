@@ -1,3 +1,6 @@
+# nifty bees 1.4
+# federal bank 4.1
+
 import yfinance as yf
 
 
@@ -24,6 +27,8 @@ def check_stop_loss(stock, buy_price, percentage_change, purchase_date):
                    
         if sl_set == 1 and stop_loss_price >= low_price:
             print(f"Stop triggered at {stop_loss_price} on {historical_data.index[i]}")
+            gain = (stop_loss_price - buy_price)*100/buy_price
+            print(f"You got a gain of {gain}")
             break
         elif sl_set == 1 and stop_loss_price < low_price and percent_change >= factor * percentage_change :
           times = int(percent_change / percentage_change)
@@ -35,9 +40,9 @@ def check_stop_loss(stock, buy_price, percentage_change, purchase_date):
 
 
 # Example usage
-stock_name = "NIFTYBEES.NS"  # Replace with the stock ticker for IDFC First Bank
-buy_price = 185  # Replace with your buy price (x)
-percentage_change = 1.4  # Replace with your desired percentage change (y)
-purchase_date = "2023-03-20"  # Replace with your purchase date (z)
+stock_name = "FEDERALBNK.NS"  # Replace with the stock ticker for IDFC First Bank
+buy_price = 124  # Replace with your buy price (x)
+percentage_change = 5   # Replace with your desired percentage change (y)
+purchase_date = "2023-03-28"  # Replace with your purchase date (z)
 
 check_stop_loss(stock_name, buy_price, percentage_change, purchase_date)
