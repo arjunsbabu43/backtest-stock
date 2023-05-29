@@ -10,6 +10,9 @@ def check_stop_loss(stock, buy_price, percentage_change, purchase_date):
     sl_set = 0
     factor = 2
     for i in range(0, len(historical_data)):
+        print()
+        print()
+        print()
         print(f"Date is {historical_data.index[i]} ")
         close_price = historical_data['Close'][i]
         print(f"close price is {close_price}")
@@ -40,9 +43,9 @@ def check_stop_loss(stock, buy_price, percentage_change, purchase_date):
 
 
 # Example usage
-stock_name = "FEDERALBNK.NS"  # Replace with the stock ticker for IDFC First Bank
-buy_price = 124  # Replace with your buy price (x)
-percentage_change = 5   # Replace with your desired percentage change (y)
-purchase_date = "2023-03-28"  # Replace with your purchase date (z)
+stock_name = "NIFTYBEES.NS"  # Replace with the stock ticker for IDFC First Bank
+buy_price = 185  # Replace with your buy price (x)
+percentage_change = 1.4   # Replace with your desired percentage change (y)
+purchase_date = "2023-03-20"  # Replace with your purchase date (z)
 
 check_stop_loss(stock_name, buy_price, percentage_change, purchase_date)
